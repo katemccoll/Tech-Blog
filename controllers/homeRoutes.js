@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name'],
+                    attributes: ['username'],
                 },
             ],
         });
@@ -23,13 +23,13 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/blog/:id', async (req, res) => {
+router.get('/blog/:id', withAuth, async (req, res) => {
     try {
         const blogData = await Blog.findByPk(req.params.id, {
             include: [
                 {
                     model: User,
-                    attributes: ['name'],
+                    attributes: ['username'],
                 },
             ],
         });
@@ -41,6 +41,19 @@ router.get('/blog/:id', async (req, res) => {
             logged_in: req.session.logged_in
         });
     } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+router.get('/blog/:id', withAuth, async (req, res) => {
+    try {
+        const blogData = await Blog.findByPk(req.params.id);
+
+        const blog = blogData.get({ plain: true });
+
+        res.render('blog', { blog, logged_in: req.session.logged_in });
+    } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
@@ -69,5 +82,15 @@ router.get('/login', (req, res) => {
     }
     res.render('login');
 });
+
+router.get('/signup', (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect('/dashboard');
+        return;
+    }
+    res.render('signup');
+});
+
+
 
 module.exports = router;
