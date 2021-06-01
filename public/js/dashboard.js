@@ -1,4 +1,4 @@
-const newForm = async (event) => {
+const newBlogButton = async (event) => {
     event.preventDefault();
 
     const title = document.querySelector('#blog-title').value.trim();
@@ -16,7 +16,7 @@ const newForm = async (event) => {
         if (response.ok) {
             document.location.replace('/dashboard');
         } else {
-            alert('Failed to create blog');
+            alert('Failed to new blog');
         }
     }
 };
@@ -38,7 +38,7 @@ const deleteButton = async (event) => {
 
 document
     .querySelector('.new-blog-form')
-    .addEventListener('submit', newForm);
+    .addEventListener('submit', newBlogButton);
 
 document
     .querySelector('.blog-list')
