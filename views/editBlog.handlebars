@@ -1,0 +1,18 @@
+<div class="card">
+    <h2 class="card-header">Edit Post</h2>
+    <form class="new-blog-form card-body">
+        <div class="form-group">
+            <label  class="form-label" for="blog-title">Title</label>
+            <input class="form-input" type="text" id="blog-title" value="{{blog.title}}"/>
+        </div>
+        <div class="form-group">
+            <label for="blog-content">Content</label>
+            <input class="form-input" type="text" id="blog-content" value="{{blog.content}}"/>
+        </div>
+        <div class="form-group">
+            <button class="deleteButton btn btn-primary">Delete</button>
+        </div>
+    </form>
+</div>
+
+<script src="js/dashboard.js"></script>
