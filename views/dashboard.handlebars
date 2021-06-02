@@ -1,12 +1,8 @@
 <div >
-    {{#if blogs.length}}
         {{#each blogs as |blog|}}
-
+            {{> blogs }}
         {{/each}}
 
-    {{else}}
-
-    {{/if}}
     <div>
         <button class="btn btn-primary"><a href="/new-post">+ New Post</a></button>
     </div>
