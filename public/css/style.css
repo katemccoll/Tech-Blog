@@ -183,14 +183,12 @@ a:hover {
 }
 
 .card-title {
-    font-size: 1.6rem;
     color: var(--primary);
     text-decoration: none;
     padding-right: 40px;
 }
 
 .card-title:hover {
-    font-size: 1.6rem;
     color: var(--primary);
     text-decoration: none;
     padding-right: 40px;
