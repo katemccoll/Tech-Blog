@@ -1,19 +1,26 @@
-<div class="card">
-    <div class="card-header">
-        <h2 >{{title}}</h2>
-        <p>Created by {{user.username}}</p>
-    </div>
-    <p class="card-body">{{content}}</p>
- </div>
-
-{{#each comments as |comment| }}
+{{#if is_owner}}
+    {{>edit-blog }}
+{{else}}
     <div class="card">
-        <h2 class="card-header"></h2>
-        <div class="card-body">
-            <p>{{comment.comment_content}}</p>
-            <p>- {{comment.user.username}}, DATE GOES HERE</p>
+        <div class="card-header">
+            <h3 class="card-title">{{title}}</h3>
+            <p>Created by {{user.username}}</p>
         </div>
+        <p class="card-body">{{content}}</p>
     </div>
-{{/each}}
-{{> add-comment }}
+    {{#each comments as |comment| }}
+        <div class="card">
+            <h3 class="card-header"> </h3>
+            <div class="card-body">
+                <p>{{comment.comment_content}}</p>
+                <p>- {{comment.user.username}}, {{format_date date_created}}</p>
+            </div>
+        </div>
+    {{/each}}
+    {{> add-comment }}
+{{/if}}
+
+
+
+
 

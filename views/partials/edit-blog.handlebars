@@ -1,6 +1,6 @@
 <div class="card">
-    <h2 class="card-header">Edit Post</h2>
-    <form class="new-blog-form card-body">
+    <h3 class="card-header">Edit Post</h3>
+    <form class="card-body">
         <div class="form-group">
             <label  class="form-label" for="blog-title">Title</label>
             <input class="form-input" type="text" id="blog-title" value="{{blog.title}}"/>
@@ -10,10 +10,10 @@
             <input class="form-input" type="text" id="blog-content" value="{{blog.content}}"/>
         </div>
         <div class="form-group">
-            <button class="update-button btn btn-primary" type="submit">Update Post</button>
+            <button id="update-button" class="btn btn-primary">Update Post</button>
             <button id="delete-blog" class="btn btn-primary">Delete</button>
         </div>
     </form>
 </div>
 
-<script src="js/editBlog.js"></script>
+<script src="/js/editBlog.js"></script>
