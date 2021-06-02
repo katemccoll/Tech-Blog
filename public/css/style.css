@@ -22,7 +22,6 @@ body {
 }
 
 h1,
-h2,
 h3,
 h4,
 h5,
@@ -54,6 +53,13 @@ nav a:hover {
     color: var(--primary);
     text-decoration: none;
     padding-right: 40px;
+}
+
+h2 {
+    font-weight: 700;
+    margin: 0;
+    color: var(--primary);
+    line-height: 1.25;
 }
 
 p {
@@ -136,6 +142,24 @@ a:hover {
     padding-right: 40px;
     margin-left: 8px;
     border: none;
+}
+
+#new-post-btn {
+    color: var(--primary);
+    background-color: var(--dark);
+    padding: 10px;
+    width: 20%;
+    border: none
+}
+
+.light-text {
+    color: var(--primary);
+    font-size: 1.6rem;
+    text-decoration: none;
+}
+
+#btn-center {
+    text-align: -webkit-center;
 }
 
 .hero {
@@ -230,6 +254,10 @@ a:hover {
 
 .card-body {
     padding: 2.5%;
+}
+
+.form-group {
+    padding: 4px 20px 10px 20px;
 }
 
 /* FORM */
