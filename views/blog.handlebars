@@ -5,3 +5,15 @@
     </div>
     <p class="card-body">{{content}}</p>
  </div>
+
+{{#each comments as |comment| }}
+    <div class="card">
+        <h2 class="card-header"></h2>
+        <div class="card-body">
+            <p>{{comment.comment_content}}</p>
+            <p>- {{comment.user.username}}, DATE GOES HERE</p>
+        </div>
+    </div>
+{{/each}}
+{{> add-comment }}
+
