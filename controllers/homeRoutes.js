@@ -80,7 +80,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
             where: {
                 user_id: req.session.user_id,
             },
-            attributes: ['id', 'title', 'content', 'user_id'],
             include: [
                 {
                     model: User,
@@ -105,7 +104,31 @@ router.get('/new-post', (req, res) => {
         logged_in: true
     });
 
-})
+});
+
+router.get('/edit-post', async (req, res) => {
+    try {
+        const blogData = await Blog.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    attributes: ['username'],
+                },
+            ],
+        });
+
+        const blog = blogData.get({ plain: true });
+
+        res.render('edit-blog', {
+            ...blog,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+
+});
+
 
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
