@@ -23,7 +23,7 @@ router.put('/:id', async (req, res) => {
                 user_id: req.session.user_id,
             },
         });
-        if (!blogData[0]) {
+        if (blogData.length === 0) {
             res.status(404).json({ message: 'No blog with this id!' });
             return;
         }

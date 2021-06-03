@@ -70,14 +70,13 @@ a {
     color: var(--dark);
     text-decoration: none;
     padding-right: 40px;
-    margin-left: 8px
+
 }
 
 a:hover {
     color: var(--dark);
     text-decoration: none;
     padding-right: 40px;
-    margin-left: 8px;
 }
 
 .btn {
@@ -240,6 +239,7 @@ a:hover {
     display: flex;
     justify-content: space-between;
     text-transform: capitalize;
+    align-items: center;
 }
 
 .card-header p {
