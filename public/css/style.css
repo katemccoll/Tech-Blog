@@ -67,7 +67,6 @@ p {
 }
 
 a {
-    font-size: 1.6rem;
     color: var(--dark);
     text-decoration: none;
     padding-right: 40px;
@@ -75,7 +74,6 @@ a {
 }
 
 a:hover {
-    font-size: 1.6rem;
     color: var(--dark);
     text-decoration: none;
     padding-right: 40px;
@@ -192,7 +190,6 @@ a:hover {
     color: var(--primary);
     text-decoration: none;
     padding-right: 40px;
-    margin-left: 8px
 }
 
 .list-group {
@@ -238,7 +235,7 @@ a:hover {
 .card-header {
     color: var(--primary);
     background-color: var(--dark);
-    padding: 2.5%;
+    padding: 10px;
     border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
     display: flex;
     justify-content: space-between;
@@ -251,7 +248,7 @@ a:hover {
 
 
 .card-body {
-    padding: 2.5%;
+    padding: 10px;
 }
 
 .form-group {
