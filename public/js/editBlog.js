@@ -3,9 +3,11 @@ const updateButton = async (event) => {
 
     const title = document.querySelector('#blog-title').value.trim();
     const content = document.querySelector('#blog-content').value.trim();
+    const blogId = window.location.pathname.split('/').pop();
+
 
     if (title && content) {
-        const response = await fetch('/api/blogs', {
+        const response = await fetch('/api/blogs/' + blogId,  {
             method: 'PUT',
             body: JSON.stringify({ title, content }),
             headers: {
@@ -22,6 +24,7 @@ const updateButton = async (event) => {
 };
 
 const deleteButton = async (event) => {
+
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
         const response = await fetch(`/api/blogs/${id}`, {
